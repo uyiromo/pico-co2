@@ -8,10 +8,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
 
+# test configs
 add_executable(test test.c)
-
 pico_enable_stdio_usb(test 1)
 pico_enable_stdio_uart(test 0)
 pico_add_extra_outputs(test)
-
 target_link_libraries(test pico_stdlib)
+
+# led
+add_subdirectory(led)
