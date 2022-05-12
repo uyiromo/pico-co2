@@ -17,3 +17,6 @@ target_link_libraries(test pico_stdlib)
 
 # led
 add_subdirectory(led)
+
+# sensor
+add_subdirectory(sensor)
