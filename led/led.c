@@ -113,9 +113,9 @@ void set_led(uint value, LED_COLOR color)
         cmask = LED_MASK[value_bcd[i]];
         mask = amask | cmask;
 
-        /* set mask, sleep 100ms, clear cathodes */
+        /* set mask, sleep 1us, clear cathodes */
         gpio_set_mask(mask);
-        sleep_ms(1);
+        sleep_us(1);
         gpio_clr_mask(mask);
     }
 
