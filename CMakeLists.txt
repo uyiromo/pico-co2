@@ -15,6 +15,19 @@ pico_enable_stdio_uart(test 0)
 pico_add_extra_outputs(test)
 target_link_libraries(test pico_stdlib)
 
+# main configs
+add_executable(main main.c)
+pico_enable_stdio_usb(main 1)
+pico_enable_stdio_uart(main 0)
+pico_add_extra_outputs(main)
+target_link_libraries(main led sensor pico_stdlib pico_multicore)
+target_include_directories(main
+    PRIVATE led
+    PRIVATE sensor
+)
+
+
+
 # led
 add_subdirectory(led)
 
